@@ -1,0 +1,13 @@
+#main{
+    border:1px solid red;
+    display: flex;
+    height: 600px;
+    width:100%;  
+    gap: 50px;
+}
+#video{
+    flex:5
+}
+#rec{
+    flex: 3;
+}

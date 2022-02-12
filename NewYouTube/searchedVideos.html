@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="https://www.youtube.com/s/desktop/5650b92e/img/favicon_144x144.png">
+    <link rel="stylesheet" href="./style/searchedVideos.css">
+    <link rel="stylesheet" href="./style/smallMenu.css">
+    <link rel="stylesheet" href="./style/bigMenu.css">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/nav.css">
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="container">
+        <div id="menuBar">
+            <!-- <div id="sMenuBar">
+                <div id="sHome">
+                    <img class="borderRadius" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBhvFKR4DhrLlZJDu7Q4rE7RKCYEOmYAwZg&usqp=CAU" alt="">
+                    <p>Home</p>
+                </div>
+                <div id="sExplore">
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPosmyKMCJgFjQivp9ONln2k3c5brUiMeZMxbxs3Kqvow7cRug" alt="">
+                    <p>Explore</p>
+                </div>
+                <div id="sSubscripe">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1WK560KQ9JfIpQp-m3tQur40o06CiZgLJNJq2SMXrJgAzzimA" alt="">
+                    <p>Subscription</p>
+                </div>
+                <div id="sLibrary">
+                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT7YABUHe9INzPu2oSf1RAf3dOfMmhWcyw-orsjowyzdpwvMIG2" alt="">
+                    <p>Library</p>
+                </div>
+            </div> -->
+            <!-- <div id="bMenuBar">
+                <div id="bHome">
+                    <img class="borderRadius" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBhvFKR4DhrLlZJDu7Q4rE7RKCYEOmYAwZg&usqp=CAU" alt="">
+                    <p>Home</p>
+                </div>
+                <div id="bExplore">
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPosmyKMCJgFjQivp9ONln2k3c5brUiMeZMxbxs3Kqvow7cRug" alt="">
+                    <p>Explore</p>
+                </div>
+                <div id="bSubscripe">
+                    <img style="height: 22px; width: 22px; margin-left: 30px;" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1WK560KQ9JfIpQp-m3tQur40o06CiZgLJNJq2SMXrJgAzzimA" alt="">
+                    <p>Subscriptions</p>
+                </div>
+                <hr>
+                <div id="bLibrary">
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT7YABUHe9INzPu2oSf1RAf3dOfMmhWcyw-orsjowyzdpwvMIG2" alt="">
+                    <p>Library</p>
+                </div>
+                <div>
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRdJvoCzJ9s1wcF7GVW48tmjNMIrmAlsrVcv568KOIF3RWP96q" alt="">
+                    <p>History</p>
+                </div>
+                <div>
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQorsqkUq_Ujy9_sF22T_Fd44sJd_x40ypV0B2KNgZzGnTFG-ms" alt="">
+                    <p>Your Videos</p>
+                </div>
+                <div>
+                    <img class="borderRadius" style="height: 20px; width: 20px; margin-left: 30px;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRBU6FprW6kIlsOV2EFxUOb9iPfVqlO5WfJ1vVyZ88jXxYpGImp" alt="">
+                    <p>Watch Later</p>
+                </div>
+                <div>
+                    <img style="height: 20px; width: 20px; margin-left: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTrOzGwJZndjYEUzuMN0hXFUbfPO_wF2YLaw&usqp=CAU" alt="">
+                    <p>Liked Videos</p>
+                </div>
+            </div> -->
+        </div>
+        <div id="content">
+            <div id="filterBox">
+                <div id="filter" onclick="showFilters()">
+                    <img src="data:image/png;base64,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" alt="">
+                    <p>FILTERS</p>
+                </div>
+            </div>
+            <hr size="1px" id="divider">
+            <div id="videos"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="module">
+    import navBar from "./components/nav.js";
+    document.querySelector("#nav").innerHTML = navBar();
+    import {smallHome, bigHome} from "./scripts/signedOutHome.js";
+    let mBar = document.querySelector("#menuBar");
+    mBar.innerHTML = bigHome();
+    let flag = 1;
+    document.querySelector("#menu").addEventListener("click", menu);
+    let searchedVideoInput = document.querySelector("#inputVideo");
+    function menu(event){
+        event.preventDefault();
+        let menuClick = document.querySelector("#menu");
+        let cont = document.querySelector("#content");
+        let hrDiv = document.querySelector("#divider");
+        let searchedVideos = document.querySelector("#videos");
+        let filt = document.querySelector("#filterBox")
+        menuClick.style.backgroundColor = "rgb(225, 223, 223)";
+        setTimeout(function(){
+            menuClick.style.backgroundColor = null;
+        }, 500)
+        if (flag === 0){
+            console.log("big");
+            flag = 1;
+            mBar.style.width = "16%";
+            mBar.style.marginRight = "25px";
+            mBar.style.marginTop = "15px";
+            cont.style.width = "82.8%"
+            searchedVideos.style.marginLeft = "0";
+            searchedVideos.style.width = "96%";
+            filt.style.marginLeft = "0";
+            hrDiv.style.marginLeft = "0";
+            filt.style.width = "100%";
+            hrDiv.style.width = "100%";
+            mBar.innerHTML = bigHome();
+        }
+        else{
+            console.log("small");
+            flag = 0;
+            mBar.style.width = "6%";
+            mBar.style.marginRight = "0%";
+            mBar.style.marginTop = "0px";
+            cont.style.width = "94%";
+            searchedVideos.style.marginLeft = "5%";
+            searchedVideos.style.width = "92%";
+            filt.style.marginLeft = "5%";
+            hrDiv.style.marginLeft = "5%";
+            filt.style.width = "95%";
+            hrDiv.style.width = "95%";
+            mBar.innerHTML = smallHome();
+        }
+    }
+
+
+    let clickedSignIn1 = document.querySelector("#signIn1");
+    clickedSignIn1.addEventListener("click", SignIn);
+    let clickedSignIn2 = document.querySelector("#signIn2");
+    clickedSignIn2.addEventListener("click", SignIn);
+    function SignIn(){
+        window.location.href="./signIn.html";
+        clickedSignIn1.remove();
+        clickedSignIn2.remove();
+    }
+
+    // document.querySelector("#searchVideo").addEventListener("click", goToShowVideos);
+
+    function showFilters(){
+        document.querySelector("#filter").style.backgroundColor = "rgb(216, 216, 216)";
+        setTimeout()
+    }
+</script>
+<script src="./scripts/getAppendData.js"></script>

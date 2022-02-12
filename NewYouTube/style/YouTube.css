@@ -1,0 +1,63 @@
+body{
+    margin: 0px;
+}
+.borderRadius{
+    border-radius: 50%;
+}
+#container{
+    border: 1px transparent teal;
+    width: 100%;
+    display: flex;
+    padding: 0px;
+}
+#container #menuBar{
+    border: 1px transparent red;
+    height: 400px;
+    width: 17%;
+    font-family: Roboto, Arial, sans-serif;
+    color: rgb(3,3,3);
+    margin-right: 20px;
+    margin-top: 15px;
+}
+#container #content{
+    border: 1px solid green;
+    background-color: rgb(249,249,249);
+    width: 82.8%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 22px;
+    font-family: Roboto, Arial, sans-serif;
+}
+#divider{
+    width: 100%;
+    margin-top: 0px;
+}
+#videos{
+    border: 1px solid red;
+    width: 97.5%;
+    margin-left: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    /* padding: 0px 30px 0px 0px; */
+}
+#videos > div{
+    border: 1px solid teal;
+    margin-top: 15px;
+    height: 210px;
+}
+#videos > div:hover{
+    cursor: pointer;
+}
+#videos > div > img{
+    height: 70%;
+    width: 100%;
+    margin-bottom: 0px;
+}
+#videos #title{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(3,3,3);
+    margin-top: 8px;
+}

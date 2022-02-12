@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="icon" href="https://www.youtube.com/s/desktop/5650b92e/img/favicon_144x144.png">
+    <link rel="stylesheet" href="./style/YouTube.css">
+    <link rel="stylesheet" href="./style/smallMenu.css">
+    <link rel="stylesheet" href="./style/bigMenu.css">
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="container">
+        <div id="menuBar">
+            <!-- <div id="sMenuBar">
+                <div id="sHome">
+                    <img class="borderRadius" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBhvFKR4DhrLlZJDu7Q4rE7RKCYEOmYAwZg&usqp=CAU" alt="">
+                    <p>Home</p>
+                </div>
+                <div id="sExplore">
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPosmyKMCJgFjQivp9ONln2k3c5brUiMeZMxbxs3Kqvow7cRug" alt="">
+                    <p>Explore</p>
+                </div>
+                <div id="sSubscripe">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1WK560KQ9JfIpQp-m3tQur40o06CiZgLJNJq2SMXrJgAzzimA" alt="">
+                    <p>Subscription</p>
+                </div>
+                <div id="sLibrary">
+                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT7YABUHe9INzPu2oSf1RAf3dOfMmhWcyw-orsjowyzdpwvMIG2" alt="">
+                    <p>Library</p>
+                </div>
+            </div> -->
+            <!-- <div id="bMenuBar">
+                <div id="bHome">
+                    <img class="borderRadius" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYBhvFKR4DhrLlZJDu7Q4rE7RKCYEOmYAwZg&usqp=CAU" alt="">
+                    <p>Home</p>
+                </div>
+                <div id="bExplore">
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPosmyKMCJgFjQivp9ONln2k3c5brUiMeZMxbxs3Kqvow7cRug" alt="">
+                    <p>Explore</p>
+                </div>
+                <div id="bSubscripe">
+                    <img style="height: 22px; width: 22px; margin-left: 30px;" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR1WK560KQ9JfIpQp-m3tQur40o06CiZgLJNJq2SMXrJgAzzimA" alt="">
+                    <p>Subscriptions</p>
+                </div>
+                <hr>
+                <div id="bLibrary">
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT7YABUHe9INzPu2oSf1RAf3dOfMmhWcyw-orsjowyzdpwvMIG2" alt="">
+                    <p>Library</p>
+                </div>
+                <div>
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRdJvoCzJ9s1wcF7GVW48tmjNMIrmAlsrVcv568KOIF3RWP96q" alt="">
+                    <p>History</p>
+                </div>
+                <div>
+                    <img class="borderRadius" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQorsqkUq_Ujy9_sF22T_Fd44sJd_x40ypV0B2KNgZzGnTFG-ms" alt="">
+                    <p>Your Videos</p>
+                </div>
+                <div>
+                    <img class="borderRadius" style="height: 20px; width: 20px; margin-left: 30px;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRBU6FprW6kIlsOV2EFxUOb9iPfVqlO5WfJ1vVyZ88jXxYpGImp" alt="">
+                    <p>Watch Later</p>
+                </div>
+                <div>
+                    <img style="height: 20px; width: 20px; margin-left: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTrOzGwJZndjYEUzuMN0hXFUbfPO_wF2YLaw&usqp=CAU" alt="">
+                    <p>Liked Videos</p>
+                </div>
+            </div> -->
+        </div>
+        <div id="content">
+            <hr size="1px" id="divider">
+            <div id="videos"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="module">
+    // const navBar1 = require("./components/nav");
+    // console.log(navBar1);
+    import navBar from "./components/nav.js";
+    document.querySelector("#nav").innerHTML = navBar();
+    import { getData, appendDataGrid } from "./scripts/api.js";
+    import {smallHome, bigHome} from "./components/signedOutHome.js";
+    let mBar = document.querySelector("#menuBar");
+    mBar.innerHTML = bigHome();
+    let flag = 1;
+    let videoDiv = document.querySelector("#videos");
+    document.querySelector("#menu").addEventListener("click", menu);
+    let searchedVideoInput = document.querySelector("#inputVideo");
+
+    function menu(event){
+        event.preventDefault();
+        let menuClick = document.querySelector("#menu");
+        let cont = document.querySelector("#content");
+        let hrDiv = document.querySelector("#divider");
+        menuClick.style.backgroundColor = "rgb(225, 223, 223)";
+        setTimeout(function(){
+            menuClick.style.backgroundColor = null;
+        }, 500)
+        if (flag === 0){
+            console.log("big");
+            flag = 1;
+            mBar.style.width = "16%";
+            mBar.style.marginRight = "25px";
+            mBar.style.marginTop = "15px";
+            cont.style.width = "82.8%"
+
+            mBar.innerHTML = bigHome();
+        }
+        else{
+            console.log("small");
+            flag = 0;
+            mBar.style.width = "6%";
+            mBar.style.marginRight = "0%";
+            mBar.style.marginTop = "0px";
+            cont.style.width = "94%";
+            mBar.innerHTML = smallHome();
+        }
+    }
+
+
+    let clickedSignIn1 = document.querySelector("#signIn1");
+    clickedSignIn1.addEventListener("click", SignIn);
+    let clickedSignIn2 = document.querySelector("#signIn2");
+    clickedSignIn2.addEventListener("click", SignIn);
+    function SignIn(){
+        window.location.href="./signIn.html";
+        clickedSignIn1.remove();
+        clickedSignIn2.remove();
+    }
+
+    document.querySelector("#searchVideo").addEventListener("click", goToShowVideos);
+    //document.querySelector("#inputVideo").addEventListener("keypress", goToShowVideos)
+
+    function goToShowVideos(){
+
+        let searchedVideoName = searchedVideoInput.value;
+        localStorage.removeItem("SearchVideo");
+        localStorage.setItem("SearchVideo", JSON.stringify(searchedVideoName));
+        if (searchedVideoName === ""){
+            searchedVideoInput.style.border = "1px solid red";
+        }
+        else{
+            window.location.href = "./searchedVideos.html"
+        }
+    }
+
+    async function showVideos(){
+        let api = `AIzaSyCVcShZKV5q8yJrH0QwBwwCwEYuCITFN34`;
+        let url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&key=${api}&maxResults=40`;
+        let res = await getData(url);
+        let data = res.items;
+        appendDataGrid(data, videoDiv);
+        console.log(data);
+    }
+    showVideos();
+</script>

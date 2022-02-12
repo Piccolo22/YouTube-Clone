@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="https://www.youtube.com/s/desktop/5650b92e/img/favicon_144x144.png">
+    <link rel="stylesheet" href="./style/nav.css">
+    <link rel="stylesheet" href="./style/playVideo.css">
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="main">
+            <!-- <div id="video"></div>
+            <div id="rec"></div> -->
+    </div>
+</body>
+</html>
+<script type="module">
+    import navBar from "./components/nav.js";
+    document.querySelector("#nav").innerHTML = navBar();
+    let video_data = JSON.parse(localStorage.getItem('clickedVideo'));
+    console.log(video_data);
+    document.title = video_data.snippet.title;
+    let videoDiv = document.querySelector("#video");
+    let iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${video_data.videoId}`;
+    iframe.height = "100%";
+    iframe.width = "100%";
+    iframe.setAttribute("allowfullscreen", "true");
+    videoDiv.append(iframe);
+</script>

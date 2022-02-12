@@ -1,0 +1,155 @@
+#nav{
+    border: 1px transparent red;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    margin-top: 0px;
+    background-color: white;
+}
+#nav > div{
+    border:1px transparent blueviolet;
+    display: flex;
+}
+#left{
+    flex: 1;
+    display: flex;
+}
+#menu{
+    border: 1px transparent red;
+    height: 30px;
+    padding: 6px 10px 3px 10px;
+    margin-top: 10px;
+    margin-left: 24px;
+    margin-right: 18px;
+}
+#menu:hover{
+    cursor: pointer;
+}
+#menu hr{
+    border: 1px solid;
+    color: rgb(50,50,50);
+    width: 18px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+#logo{
+    margin-top: 13px;
+    display: flex;
+    margin-left: 0px;
+}
+#logo img{
+    margin-top: 5px;
+    height: 20px;
+    width: 90px;
+}
+#logo sup{
+    font-family: Roboto, Arial, sans-serif;
+    margin-left: 5px;
+    font-size: 10px;
+}
+#mid{
+    flex: 4;
+    display: flex;
+}
+#mid #searchByText{
+    display: flex;
+    width: 70%;
+    height: 69%;
+    margin-top: 8px;
+    margin-left: 15%;
+    border-radius: 2px;
+}
+#searchByText #inputVideo{
+    border-top: 1px solid rgb(204,204,204);
+    border-left: 1px solid rgb(204,204,204);
+    border-bottom: 1px solid rgb(204,204,204);
+    border-right: 0px;
+    border-radius: 2px 0px 0px 2px;
+    width: 89%;
+    font-size: 16px;
+    font-family: Roboto, Noto, sans-serif;
+    line-height: 24px;
+    color: rgb(17, 17, 17);
+    padding-left: 11px;
+    margin-left: 10px;
+    outline: none;
+}
+#searchByText #searchVideo{
+    border: 1px solid rgb(204,204,204);
+    border-radius: 0px 2px 2px 0px;
+    width: 10%;
+    height: 95%;
+    background-color: rgb(248,248,248);
+}
+#searchByText #searchVideo:hover{
+    cursor: pointer;
+    /* background-color: rgb(228, 226, 226); */
+}
+#searchVideo img{
+    width: 100%;
+    height: 100%;
+}
+#searchByVoice{
+    width: 4.5%;
+    height: 67%;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+#searchByVoice img{
+    height: 100%;
+    width: 100%;
+}
+#microphone:hover{
+    cursor: pointer;
+}
+#right{
+    border: 1px transparent green;
+    flex: 1;
+    display: flex;
+}
+#right > div{
+    margin-right: 19px;
+}
+#right > div:hover{
+    cursor: pointer;
+}
+#right #create img{
+    height: 20px;
+    width: 20px;
+    margin-top: 15px;
+    margin-left: 0px;
+}
+#right #YouTubeApps img{
+    height: 40px;
+    width: 40px;
+    margin-top: 6px;
+}
+#right #settings img{
+    height: 25px;
+    width: 25px;
+    margin-top: 15px;
+}
+.signIn{
+    border: 1px solid rgb(10, 103, 224);
+    width: 85px;
+    height: 25px;
+    display: flex;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    color: rgb(10, 103, 224);
+    margin-top: 8px;
+    padding: 0px 15px 15px 15px;
+}
+.signIn:hover{
+    cursor: pointer;
+}
+.signIn img{
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.signIn p{
+    margin-top: 12px;
+}
