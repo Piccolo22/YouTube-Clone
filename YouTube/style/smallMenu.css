@@ -1,0 +1,23 @@
+#menuBar > #sMenuBar{
+    border: 1px transparent green;
+    width: 100%;
+}
+#sMenuBar > div{
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#menuBar > #sMenuBar img{
+    width: 25px;
+    height: 25px;
+    margin-left: 29px;
+    margin-top: 7px;
+}
+#menuBar > #sMenuBar p{
+    font-size: 11px;
+    line-height: 14px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30%;
+}
+
